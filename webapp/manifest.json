@@ -1,7 +1,7 @@
 {
   "_version": "1.17.0",
   "sap.app": {
-    "id": "walkthrough-ui5",
+    "id": "walkthrough",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -17,7 +17,7 @@
     },
     "crossNavigation": {
       "inbounds": {
-        "walkthrough-ui5-inbound": {
+        "walkthrough-inbound": {
           "signature": {
             "parameters": {},
             "additionalParameters": "allowed"
@@ -70,7 +70,7 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "walkthrough-ui5.i18n.i18n"
+          "bundleName": "walkthrough.i18n.i18n"
         }
       }
     },
@@ -86,7 +86,7 @@
         "routerClass": "sap.m.routing.Router",
         "viewType": "XML",
         "async": true,
-        "viewPath": "walkthrough-ui5.view",
+        "viewPath": "walkthrough.view",
         "controlAggregation": "pages",
         "controlId": "app",
         "clearControlAggregation": false
@@ -109,7 +109,7 @@
       }
     },
     "rootView": {
-      "viewName": "walkthrough-ui5.view.App",
+      "viewName": "walkthrough.view.App",
       "type": "XML",
       "async": true,
       "id": "App"
