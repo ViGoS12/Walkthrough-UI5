@@ -8,6 +8,8 @@
     width="auto">
     <Button 
       id="helloDialogButton"
+      iconFirst="false"
+      icon="sap-icon://message-popup"
       text="{i18n>helloDialogButtonText}"
       press=".onOpenDialog"
       class="sapUiSmallMarginEnd">
