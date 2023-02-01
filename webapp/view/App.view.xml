@@ -4,7 +4,7 @@
   xmlns:mvc="sap.ui.core.mvc"
   displayBlock="true">
   <Shell>
-    <App>   
+    <App class="myAppDemoWT">   
       <pages>
         <Page title="{i18n>homePageTitle}">
           <content>
@@ -16,15 +16,15 @@
                 id="button1" 
                 text='{i18n>clickHelloButtonText}' 
                 press=".onClickHello"
-                class="sapUiSmallMarginEnd"/>
+                class="myCustomButton"/>
                 <Input
                   id="Input1" 
                   value="{/recipient/name}"                   
                   valueLiveUpdate="true"       
                   width="60%"/>    
-                <Text 
-                  text="Hello {/recipient/name}"
-                  class="sapUiSmallMargin"/>        
+                <FormattedText 
+                  htmlText="Hello {/recipient/name}"
+                  class="sapUiSmallMargin sapThemeHighlight-asColor myCustomText"/>        
               </Panel>             
             </content>
           </Page>
