@@ -8,14 +8,23 @@
       <pages>
         <Page title="{i18n>homePageTitle}">
           <content>
-            <Panel headerText="{i18n>helloPanelTitle}">
-              <Button id="button1" text='{i18n>clickHelloButtonText}' press=".onClickHello"/>
+            <Panel 
+              headerText="{i18n>helloPanelTitle}"
+              class="sapUiResponsiveMargin"
+              width="auto">
+              <Button 
+                id="button1" 
+                text='{i18n>clickHelloButtonText}' 
+                press=".onClickHello"
+                class="sapUiSmallMarginEnd"/>
                 <Input
-                id="Input1" 
-                value="{/recipient/name}" 
-                description="Hello {/recipient/name}" 
-                valueLiveUpdate="true"       
-                width="60%"/>            
+                  id="Input1" 
+                  value="{/recipient/name}"                   
+                  valueLiveUpdate="true"       
+                  width="60%"/>    
+                <Text 
+                  text="Hello {/recipient/name}"
+                  class="sapUiSmallMargin"/>        
               </Panel>             
             </content>
           </Page>
