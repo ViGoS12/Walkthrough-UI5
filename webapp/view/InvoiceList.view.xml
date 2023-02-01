@@ -2,11 +2,21 @@
   controllerName="sap.ui.demo.walkthrough.controller.InvoiceList"
   xmlns="sap.m"
   xmlns:mvc="sap.ui.core.mvc">
-  <List
-    headerText="{i18n>invoiceListTitle}"
+  <List   
+    id="invoiceList" 
     class="sapUiResponsiveMargin"
     width="auto"
     items="{invoice>/Invoices}">
+    <headerToolbar>
+      <Toolbar>
+        <Title text="{i18n>invoiceListTitle}"/>
+          <ToolbarSpacer/>
+          <SearchField 
+            width="50%" 
+            search=".onFilterInvoices" 
+            placeholder="Enter your Product Name" />        
+      </Toolbar>
+    </headerToolbar>
     <items> 
       <ObjectListItem 
         title="{invoice>Quantity} x {invoice>ProductName}"
