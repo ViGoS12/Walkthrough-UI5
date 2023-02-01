@@ -10,12 +10,12 @@ sap.ui.define(
       },
       init: function () {
         UIComponent.prototype.init.apply(this, arguments)
-        let oData = {
+        const oData = {
           recipient: {
             name: 'World!',
           },
         }
-        let oModel = new JSONModel(oData)
+        const oModel = new JSONModel(oData)
         this.setModel(oModel)
       },
     })
