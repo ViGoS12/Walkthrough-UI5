@@ -32,6 +32,11 @@ sap.ui.define(
         const oBinding = oList.getBinding('items')
         oBinding.filter(aFilter)
       },
+
+      onPressInfo: function (oEvent) {
+        const oRouter = this.getOwnerComponent().getRouter()
+        oRouter.navTo('detail')
+      },
     })
   }
 )
