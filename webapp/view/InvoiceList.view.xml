@@ -26,7 +26,7 @@
       <ObjectListItem 
         title="{invoice>Quantity} x {invoice>ProductName}"
         number="{
-                  parts: [{path: 'invoice>ExtendedPrice'}, 
+                  parts: [{path: 'invoice>ExTendedPrice'}, 
                           {path: 'view/currency'}],
                   type: 'sap.ui.model.type.Currency',
                   formatOptions: {
