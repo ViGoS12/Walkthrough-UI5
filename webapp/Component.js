@@ -24,6 +24,17 @@ sap.ui.define(
 
         this.getRouter().initialize()
       },
+
+      getContentDensityClass: function () {
+        if (!this._sContentDensityClass) {
+          if (!Device.support.touch) {
+            this._sContentDensityClass = 'sapUiSizeCompact'
+          } else {
+            this._sContentDensityClass = 'sapUiSizeCozy'
+          }
+        }
+        return this._sContentDensityClass
+      },
     })
   }
 )
