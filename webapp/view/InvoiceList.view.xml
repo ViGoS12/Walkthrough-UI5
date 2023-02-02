@@ -2,72 +2,65 @@
   controllerName="sap.ui.demo.walkthrough.controller.InvoiceList"
   xmlns="sap.m"
   xmlns:mvc="sap.ui.core.mvc">
-  <Panel accessibleRole="Region">
-		<headerToolbar>
-			<Toolbar>
-				<Title text="{i18n>invoiceListTitle}"/>
-				<ToolbarSpacer/>
-				<SearchField
-					width="50%"
-					search=".onFilterInvoices"
-					ariaLabelledBy="searchFieldLabel"
-					ariaDescribedBy="searchFieldDescription"
-					placeholder="{i18n>searchFieldPlaceholder}"/>
-			</Toolbar>
-		</headerToolbar>
-	<List   
-		id="invoiceList" 
-		class="sapUiResponsiveMargin"
-		width="auto"
-		items="{path: 'invoice>/Invoices',
-				sorter: { 
-				path: 'ShipperName',
-				group: true 
-				}
-		}">
-		<headerToolbar>
-		<Toolbar>
-			<Title text="{i18n>invoiceListTitle}"/>
-			<ToolbarSpacer/>
-			<SearchField 
-				width="50%" 
-				search=".onFilterInvoices" 
-				placeholder="Enter your Product Name" />        
-		</Toolbar>
-		</headerToolbar>
-		<items> 
-		<ObjectListItem 
-			title="{invoice>Quantity} x {invoice>ProductName}"
-			number="{
-					parts: [{path: 'invoice>ExtendedPrice'}, 
-							{path: 'view/currency'}],
-					type: 'sap.ui.model.type.Currency',
-					formatOptions: {
-										showMeasure: false
-									}
-			}"
-			numberUnit="{view>/currency}"
-			numberState="{= ${invoice>ExtendedPrice} >= 100 ? 'Error' : 'Success'}"
-			type="Navigation"
-			press="onPressInfo">
-			<firstStatus>
-			<ObjectStatus 
-				text="{ path: 'invoice>Status',
-						formatter: '.formatter.statusText' }"/>
-			</firstStatus>
-		</ObjectListItem>
-		</items>
-	</List>
-	<Table
+  <Panel accessibleRole="Region">		
+    <List   
+      id="invoiceList" 
+      class="sapUiResponsiveMargin"
+      width="auto"
+      items="{
+        path: 'invoice>/Invoices',
+        sorter: { 
+        path: 'ShipperName',
+        group: true 
+        }
+      }">
+      <headerToolbar>
+        <Toolbar>
+          <Title text="{i18n>invoiceListTitle}"/>
+          <ToolbarSpacer/>
+          <SearchField 
+            width="50%" 
+            search=".onFilterInvoices" 
+            ariaLabelledBy="searchFieldLabel"
+            ariaDescribedBy="searchFieldDescription"
+            placeholder="{i18n>searchFieldPlaceholder}"/>        
+        </Toolbar>
+      </headerToolbar>
+      <items> 
+      <ObjectListItem 
+        title="{invoice>Quantity} x {invoice>ProductName}"
+        number="{
+          parts: [{path: 'invoice>ExtendedPrice'}, 
+                  {path: 'view/currency'}],
+          type: 'sap.ui.model.type.Currency',
+          formatOptions: {
+            showMeasure: false
+          } 
+        }"
+        numberUnit="{view>/currency}"
+        numberState="{= ${invoice>ExtendedPrice} >= 100 ? 'Error' : 'Success'}"
+        type="Navigation"
+        press="onPressInfo">
+        <firstStatus>
+        <ObjectStatus 
+          text="{ 
+            path: 'invoice>Status',
+            formatter: '.formatter.statusText' 
+          }"/>
+        </firstStatus>
+      </ObjectListItem>
+      </items>
+    </List>
+	  <Table
 			id="invoiceTable"
 			class="sapUiResponsiveMargin"
 			width="auto"
 			items="{
-				path : 'invoice>/Invoices',
-				sorter : {
-					path : 'ShipperName',
-					group : true
-				}
+        path : 'invoice>/Invoices',
+        sorter : {
+          path : 'ShipperName',
+          group : true
+        }
 			}">		
 			<columns>
 				<Column
